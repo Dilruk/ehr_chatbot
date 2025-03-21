@@ -1,6 +1,6 @@
 # 🏥 EHR Chatbot
 
-An AI-powered chatbot designed to interact with **Electronic Health Records (EHR)** to help healthcare professionals retrieve patient information, summarize medical history, and answer clinical questions using **natural language**.
+An Large Language Model (LLM) powered chatbot designed to interact with **Electronic Health Records (EHR)** to help healthcare professionals retrieve patient information, summarize medical history, and answer clinical questions using **natural language**.
 
 ---
 
