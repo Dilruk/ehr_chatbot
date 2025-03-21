@@ -105,7 +105,8 @@ def fetch_filtered_data(patient_id, query_details):
                         if (match := re.match(r'filter:(.+)', logic, re.IGNORECASE)):
                             condition = match.group(1).strip()
                             # Tokenize condition by splitting on spaces while preserving quoted strings
-                            tokens = condition.split()
+                            # tokens = condition.split()
+                            tokens = re.findall(r'\".*?\"|\S+', condition)
                             formatted_condition = []
                             i = 0
                             while i < len(tokens):
@@ -128,7 +129,7 @@ def fetch_filtered_data(patient_id, query_details):
                                         formatted_condition.append(f"{col_name} {operator} {value}")
                                         i += 2  # Skip processed tokens
                                     else:
-                                        formatted_condition.append(col_name)  # If not a condition, keep as is
+                                        formatted_condition.append(col_name)  # If not a condition, no changes.
                                 elif part in {"AND", "OR", "(", ")"}:
                                     # Preserve logical operators and parentheses
                                     formatted_condition.append(part)
